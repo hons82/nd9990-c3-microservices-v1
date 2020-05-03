@@ -24,7 +24,7 @@ async function comparePasswords(plainTextPassword: string, hash: string): Promis
 
 function generateJWT(user: User): string {
     console.log("generateJWT")
-    return jwt.sign(user.short(), c.config.jwt.secret)
+    return jwt.sign(user.short(), c.config.jwt.jwt_secret)
 }
 
 export function requireAuth(req: Request, res: Response, next: NextFunction) {
